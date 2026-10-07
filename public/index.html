@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokédex Kanto — 1ª Geração</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div id="app">
+  <header class="top-bar">
+    <div class="pokeball-icon"></div>
+    <h1 class="title">Pokédex</h1>
+    <span class="subtitle">Kanto — 1ª Geração</span>
+    <span class="count-badge" id="count-badge">151 Pokémon</span>
+  </header>
+  <div class="main-layout">
+    <aside class="left-panel">
+      <div class="search-wrap">
+        <input type="text" id="search-input" placeholder="🔍 Buscar por nome ou #..."/>
+      </div>
+      <div class="type-filters" id="type-filters"></div>
+      <div class="pokemon-list" id="pokemon-list"></div>
+    </aside>
+    <main class="right-panel">
+      <nav class="tabs">
+        <button class="tab-btn active" data-tab="info">📋 Informações</button>
+        <button class="tab-btn" data-tab="ia">🤖 IA Pokédex</button>
+        <button class="tab-btn" data-tab="compare">⚔️ Comparar</button>
+      </nav>
+      <div class="tab-content active" id="tab-info">
+        <div id="detail-view" class="empty-state">Selecione um Pokémon para ver os detalhes</div>
+      </div>
+      <div class="tab-content" id="tab-ia">
+        <div class="ai-panel">
+          <div class="ai-messages" id="ai-messages">
+            <div class="ai-welcome">
+              <div class="ai-icon">🤖</div>
+              <strong>Olá, Treinador!</strong>
+              <p>Sou a IA da Pokédex. Pergunte qualquer coisa sobre os 151 Pokémon de Kanto!</p>
+              <div class="quick-questions">
+                <button class="quick-q" onclick="quickQuestion('Qual é o tipo do Charizard?')">Tipo do Charizard?</button>
+                <button class="quick-q" onclick="quickQuestion('Quais são as fraquezas do Pikachu?')">Fraquezas do Pikachu?</button>
+                <button class="quick-q" onclick="quickQuestion('Quem vence entre Blastoise e Venusaur?')">Blastoise vs Venusaur?</button>
+                <button class="quick-q" onclick="quickQuestion('Qual Pokémon tem o maior ataque base?')">Maior ataque?</button>
+                <button class="quick-q" onclick="quickQuestion('Quais são os Pokémon lendários de Kanto?')">Lendários?</button>
+                <button class="quick-q" onclick="quickQuestion('Qual o Pokémon mais rápido de Kanto?')">Mais rápido?</button>
+              </div>
+            </div>
+          </div>
+          <div class="ai-input-row">
+            <input type="text" id="ai-input" placeholder="Pergunte sobre qualquer Pokémon..."/>
+            <button id="send-btn" onclick="sendAIMessage()">Enviar ➤</button>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content" id="tab-compare">
+        <div class="compare-wrap">
+          <div class="compare-selects">
+            <select id="comp-a"></select>
+            <span class="vs-label">VS</span>
+            <select id="comp-b"></select>
+          </div>
+          <div class="compare-cards" id="compare-cards"></div>
+          <div id="ai-comp-result" class="ai-comp-result" style="display:none"></div>
+          <button class="analyze-btn" onclick="analyzeWithAI()">🤖 Analisar batalha com IA</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
