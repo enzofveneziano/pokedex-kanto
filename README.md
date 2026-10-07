@@ -17,7 +17,7 @@ Na pasta do projeto, crie um arquivo chamado `.env`:
 GROQ_API_KEY=sk-ant-SUA_CHAVE_AQUI
 ```
 
-Obtenha sua chave em: https://console.anthropic.com/
+Obtenha sua chave em: https://console.groq.com/home
 
 ### 3. Rode o servidor
 ```bash
