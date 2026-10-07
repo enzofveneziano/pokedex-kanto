@@ -14,7 +14,7 @@ Baixe em: https://nodejs.org
 Na pasta do projeto, crie um arquivo chamado `.env`:
 
 ```
-ANTHROPIC_API_KEY=sk-ant-SUA_CHAVE_AQUI
+GROQ_API_KEY=sk-ant-SUA_CHAVE_AQUI
 ```
 
 Obtenha sua chave em: https://console.anthropic.com/
